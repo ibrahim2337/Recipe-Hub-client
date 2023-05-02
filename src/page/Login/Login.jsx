@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -101,12 +102,12 @@ const Login = () => {
         <p className="mt-8 text-sm font-light text-center text-gray-900">
           {" "}
           Dont have an account?{" "}
-          <a
-            href="#"
+          <Link
+            to="/register"
             className="font-medium text-gray-700 dark:text-blue-700 hover:underline"
           >
             Register
-          </a>
+          </Link>
         </p>
       </div>
     </div>

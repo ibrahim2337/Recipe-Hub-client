@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className='bg-slate-300'>
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <a
             href="/"
@@ -64,14 +65,14 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/blogs"
                 aria-label="About us"
                 title="About us"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
-                About us
-              </a>
+                Blog
+              </Link>
             </li>
           </ul>
           <ul className="flex items-center space-x-8 lg:flex">
@@ -215,6 +216,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
+      </div>
       </div>
     );
 };
