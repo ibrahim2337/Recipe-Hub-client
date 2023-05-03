@@ -9,8 +9,8 @@ import Homepage from "./page/Homepage/Homepage";
 import Login from "./page/Login/Login";
 import Register from "./page/Register/Register";
 import Blog from "./components/Blog/Blog";
-import Details from "./components/Details/Details";
 import Features from "./page/Features/Features";
+import DetailsPage from "./page/DetailsPage/DetailsPage";
 
 
 const router = createBrowserRouter([
@@ -39,13 +39,18 @@ const router = createBrowserRouter([
         path:"/blogs",
         element:<Blog />
       },
-     {
-      path:"/details",
-      element:<Details />
-     },
+     
      {
       path:"/features",
       element:<Features />
+     },
+     {
+      path:"/chefDetail/:id",
+      element:<DetailsPage />,
+      loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/recipes/${params.id}`
+          ),
      }
     ],
   },
