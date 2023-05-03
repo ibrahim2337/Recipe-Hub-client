@@ -155,7 +155,7 @@ const Team = () => {
               </h1>
 
               <p className="mt-2 text-gray-500 capitalize dark:text-gray-900 group-hover:text-gray-300">
-              Co-founder
+                Co-founder
               </p>
 
               <div className="flex mt-3 -mx-2">

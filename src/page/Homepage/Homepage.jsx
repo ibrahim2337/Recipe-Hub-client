@@ -3,6 +3,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Team from "../../components/Team/Team";
 import Banner from "../../components/Banner/Banner";
+import Category from "../../components/Category/Category";
+import Gallery from "../../components/Gallery/Gallery";
 
 const Homepage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -13,13 +15,16 @@ const Homepage = () => {
       .then((data) => setRecipes(data));
   }, []);
   return (
-
     <div>
       <div>
         <Banner />
+        <Category />
       </div>
-      {recipes.map((recipe,index) => (
-        <div key={index} className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+      {recipes.map((recipe, index) => (
+        <div
+          key={index}
+          className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100"
+        >
           <img
             src=""
             alt=""
@@ -44,11 +49,11 @@ const Homepage = () => {
       >
         Read more
       </button>
+<Gallery/>
       <div>
         <Team></Team>
       </div>
     </div>
-    
   );
 };
 
