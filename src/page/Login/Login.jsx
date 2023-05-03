@@ -6,19 +6,19 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="m-5">
-        <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-lg shadow-2xl ">
+        <div className="w-full max-w-sm p-6 m-auto mx-auto bg-slate-100 rounded-lg ">
         <h1 className="text-3xl font-semibold">Sign in to your account</h1>
         <form className="mt-5">
           <div>
             <label
-              for="username"
-              className="block text-sm text-gray-800 dark:text-gray-900"
+           
+              className="block text-sm text-gray-800 dark:text-gray-900 " 
             >
               Username
             </label>
             <input
               type="text"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Username"
             />
           </div>
   
@@ -40,7 +40,7 @@ const Login = () => {
   
             <input
               type="password"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password"
             />
           </div>
   

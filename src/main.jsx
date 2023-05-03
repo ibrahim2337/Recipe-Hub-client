@@ -9,6 +9,8 @@ import Homepage from "./page/Homepage/Homepage";
 import Login from "./page/Login/Login";
 import Register from "./page/Register/Register";
 import Blog from "./components/Blog/Blog";
+import Details from "./components/Details/Details";
+
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,11 @@ const router = createBrowserRouter([
       {
         path:"/blogs",
         element:<Blog />
-      }
+      },
+     {
+      path:"/details",
+      element:<Details />
+     }
     ],
   },
 ]);

@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
-    <div>
-      <section className="bg-white rounded-lg shadow-2xl ">
+    <div className="my-5">
+      <section className="w-full max-w-md mx-auto bg-slate-100 rounded-lg ">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
           <form className="w-full max-w-md">
-            <h1 className="text-3xl font-semibold text-center">Sign up</h1>
+            <h1 className="text-3xl font-bold text-center ">Sign up</h1>
 
-            <div className="relative flex items-center mt-8">
+            <div className="relative flex items-center mt-5">
               <span className="absolute">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -30,14 +30,14 @@ const Register = () => {
 
               <input
                 type="text"
-                className="block w-full py-3 text-gray-900 bg-white border rounded-lg px-11   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-900 dark:border-gray-700 bg-white border rounded-lg px-11   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
               />
             </div>
 
             <label
               htmlFor="dropzone-file"
-              className="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer  "
+              className="flex items-center px-3 py-3 mx-auto mt-6 text-center dark:border-gray-700 bg-white border-2 border-dashed rounded-lg cursor-pointer  "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const Register = () => {
                 />
               </svg>
 
-              <h2 className="mx-3 text-gray-400">Profile Photo</h2>
+              <h2 className="mx-3 text-gray-400 ">Profile Photo</h2>
 
               <input id="dropzone-file" type="file" className="hidden" />
             </label>
@@ -79,7 +79,7 @@ const Register = () => {
 
               <input
                 type="email"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 dark:border-gray-700 bg-white border rounded-lg px-11   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
               />
             </div>
@@ -104,7 +104,7 @@ const Register = () => {
 
               <input
                 type="password"
-                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-10 py-3 text-gray-700 dark:border-gray-700 bg-white border rounded-lg   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
               />
             </div>
@@ -129,7 +129,7 @@ const Register = () => {
 
               <input
                 type="password"
-                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-10 py-3 text-gray-700 dark:border-gray-700 bg-white border rounded-lg  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Confirm Password"
               />
             </div>
