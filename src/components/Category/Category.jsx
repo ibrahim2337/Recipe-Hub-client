@@ -14,8 +14,8 @@ const Category = () => {
   return (
     <section className="p-6 my-6 mx-16 dark:text-gray-900">
       <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
-        <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-200 dark:text-gray-900">
-          <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-violet-400">
+        <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-200 ">
+          <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"

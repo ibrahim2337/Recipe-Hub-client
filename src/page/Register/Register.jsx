@@ -1,156 +1,175 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+
 
 const Register = () => {
+  const { signUp, profileUpdate } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [accepted, setAccepted] = useState(false);
+  const navigate = useNavigate();
+
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
+  };
+
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm = form.confirm.value;
+
+    if (password !== confirm) {
+      setError("Password doesn't match");
+      return;
+    }
+    setError("");
+
+    signUp(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        handleUserProfile(name, photo);
+        navigate("/login");
+        setError("");
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  const handleUserProfile = (name, photo) => {
+    const profile = {
+      displayName: name,
+      photoURL: photo,
+    };
+
+    profileUpdate(profile)
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
-    <div className="my-5">
-      <section className="w-full max-w-md mx-auto bg-slate-100 rounded-lg ">
-        <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-          <form className="w-full max-w-md">
-            <h1 className="text-3xl font-bold text-center ">Sign up</h1>
-
-            <div className="relative flex items-center mt-5">
-              <span className="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </span>
-
-              <input
-                type="text"
-                className="block w-full py-3 text-gray-900 dark:border-gray-700 bg-white border rounded-lg px-11   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                placeholder="Username"
-              />
-            </div>
-
-            <label
-              htmlFor="dropzone-file"
-              className="flex items-center px-3 py-3 mx-auto mt-6 text-center dark:border-gray-700 bg-white border-2 border-dashed rounded-lg cursor-pointer  "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-gray-300 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
-                />
-              </svg>
-
-              <h2 className="mx-3 text-gray-400 ">Profile Photo</h2>
-
-              <input id="dropzone-file" type="file" className="hidden" />
+    <div className="w-11/12 md:w-7/12 lg:w-5/12 mx-auto my-8 p-8 rounded-md sm:p-10 bg-secondary text-neutral">
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl font-bold">Register</h1>
+      </div>
+      <form
+        onSubmit={handleSignUp}
+        noValidate=""
+        action=""
+        className="space-y-12 ng-untouched ng-pristine ng-valid"
+      >
+        <div className="space-y-4">
+          <div>
+            <label htmlFor="name" className="block mb-2 text-sm" required>
+              Name
             </label>
-
-            <div className="relative flex items-center mt-6">
-              <span className="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </span>
-
-              <input
-                type="email"
-                className="block w-full py-3 text-gray-700 dark:border-gray-700 bg-white border rounded-lg px-11   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                placeholder="Email address"
-              />
+            <input
+              type="name"
+              name="name"
+              id="name"
+              placeholder="Name"
+              className="w-full px-3 py-2 border rounded-md border-gray-700 bg-secondary text-neutral"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block mb-2 text-sm">
+              Email address
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@email.com  "
+              className="w-full px-3 py-2 border rounded-md border-gray-700 bg-secondary text-neutral"
+              required
+            />
+          </div>
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="password" className="text-sm">
+                Password
+              </label>
             </div>
-
-            <div className="relative flex items-center mt-4">
-              <span className="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </span>
-
-              <input
-                type="password"
-                className="block w-full px-10 py-3 text-gray-700 dark:border-gray-700 bg-white border rounded-lg   focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                placeholder="Password"
-              />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="*****"
+              className="w-full px-3 py-2 border rounded-md border-gray-700 bg-secondary text-neutral"
+              required
+            />
+          </div>
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="confirm" className="text-sm">
+                Confirm Password
+              </label>
             </div>
-
-            <div className="relative flex items-center mt-4">
-              <span className="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </span>
-
-              <input
-                type="password"
-                className="block w-full px-10 py-3 text-gray-700 dark:border-gray-700 bg-white border rounded-lg  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                placeholder="Confirm Password"
-              />
-            </div>
-
-            <div className="mt-6">
-              <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                Sign Up
-              </button>
-
-              <div className="mt-6 text-center ">
-                <Link
-                  to="/login"
-                  className="text-sm text-blue-500 hover:underline "
-                >
-                  Already have an account?
-                </Link>
-              </div>
-            </div>
-          </form>
+            <input
+              type="password"
+              name="confirm"
+              id="confirm"
+              placeholder="*****"
+              className="w-full px-3 py-2 border rounded-md border-gray-700 bg-secondary text-neutral"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="photo" className="block mb-2 text-sm">
+              Photo Link
+            </label>
+            <input
+              type="photo"
+              name="photo"
+              id="photo"
+              placeholder="Photo Link"
+              className="w-full px-3 py-2 border rounded-md border-gray-700 bg-secondary text-neutral"
+            />
+          </div>
         </div>
-      </section>
+        <small>
+          <p className="text-error mt-2">{error.split("Firebase:")}</p>
+        </small>
+        <div className="space-y-2 mt-0">
+          <div className="flex items-center -mt-8">
+            <input
+              type="checkbox"
+              onClick={handleAccepted}
+              className="checkbox checkbox-neutral rounded cursor-pointer h-4 w-4 mr-2"
+            />
+            <span className="label-text pb-px">
+              Accept our{" "}
+              <Link className="text-primary hover:underline">
+                terms and conditions
+              </Link>
+            </span>
+          </div>
+
+          <div className="-mt-8">
+            <button
+              disabled={!accepted}
+              type="submit"
+              className="w-full px-8 py-3 font-semibold rounded-md bg-neutral text-secondary disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              Register
+            </button>
+          </div>
+          <p className="px-6 text-sm text-center text-neutral">
+            Already have an account? <br />
+            <Link rel="noopener noreferrer" to="/login" className="underline">
+              Log In
+            </Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
 };

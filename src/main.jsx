@@ -11,6 +11,7 @@ import Register from "./page/Register/Register";
 import Blog from "./components/Blog/Blog";
 import Features from "./page/Features/Features";
 import DetailsPage from "./page/DetailsPage/DetailsPage";
+import AuthProvider from "./provider/AuthProvider";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div>
+    <AuthProvider >
     <RouterProvider router={router} />
+    </AuthProvider>
   </div>
 );

@@ -21,35 +21,39 @@ const Homepage = () => {
         <Banner />
         <Category />
       </div>
+      <div className="grid grid-cols-12 gap-12 container mx-auto px-12 relative">
       {recipes.map((recipe, index) => (
         <div
           key={index}
-          className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100"
+          className="col-span-4 rounded-md shadow-md "
         >
+          <div className="">
           <img
             src={recipe.chef.chef_photo}
             alt=""
-            className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
+            className="object-cover object-top w-full rounded-t-md h-72 "
           />
           <div className="flex flex-col justify-between p-6 space-y-8">
             <div className="space-y-2">
               <h2 className="text-3xl font-semibold tracking-wide">
                 {recipe.chef.chef_name}
               </h2>
-              <p className="dark:text-gray-100">{recipe.chef.experience}</p>
+              <p className="">{recipe.chef.experience}</p>
               <p>{recipe.chef.likes}</p>
             </div>
+          </div>
           </div>
           <Link to={`/chefDetail/${recipe.id}`}>
             <button
               type="button"
-              className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900"
+              className="w-full px-6 py-2 font-bold text-cyan-50 border-md rounded-b-md bg-blue-500  bg-gradient-to-r from-purple-500 to-blue-400 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500  delay-75 duration-100 transition-all  "
             >
               Read more
             </button>
           </Link>
         </div>
       ))}
+      </div>
 
       <Gallery />
       <div>
