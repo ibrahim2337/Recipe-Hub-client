@@ -6,11 +6,13 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div>
-    <Navbar />
-    <Outlet />
-    <Footer />
-    </div>
+      <div>
+          <Navbar />
+          <div className="min-h-screen">
+              <Outlet />
+          </div>
+          <Footer />
+      </div>
   );
 }
 

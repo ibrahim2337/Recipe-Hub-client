@@ -12,52 +12,57 @@ import Blog from "./components/Blog/Blog";
 import Features from "./page/Features/Features";
 import DetailsPage from "./page/DetailsPage/DetailsPage";
 import AuthProvider from "./provider/AuthProvider";
+import PrivateRoute from "./route/PrivateRoute";
+import { Toaster } from "react-hot-toast";
+
 
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      {
+    {
         path: "/",
-        element: <Homepage />,
-      },
-      {
-        path: "/home",
-        element: <Homepage />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path:"/blogs",
-        element:<Blog />
-      },
-     
-     
-     {
-      path:"/chefDetail/:id",
-      element:<DetailsPage />,
-      loader: ({ params }) =>
-          fetch(
-            `http://localhost:5000/recipes/${params.id}`
-          ),
-     }
-    ],
-  },
+        element: <App />,
+        errorElement: <Error />,
+        children: [
+            {
+                path: "/",
+                element: <Homepage />,
+            },
+            {
+                path: "/home",
+                element: <Homepage />,
+            },
+            {
+                path: "/login",
+                element: <Login />,
+            },
+            {
+                path: "/register",
+                element: <Register />,
+            },
+            {
+                path: "/blog",
+                element: <Blog />,
+            },
+
+            {
+                path: "/chef_detail/:id",
+                element: (
+                    <PrivateRoute>
+                        <DetailsPage />
+                    </PrivateRoute>
+                ),
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5000/recipes/${params.id}`),
+            },
+        ],
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div>
-    <AuthProvider >
-    <RouterProvider router={router} />
-    </AuthProvider>
-  </div>
+    <div>
+        <AuthProvider>
+            <Toaster position="top-center" />
+            <RouterProvider router={router} />
+        </AuthProvider>
+    </div>
 );

@@ -1,130 +1,117 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import ReactToPdf from "react-to-pdf";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const Blog = () => {
+  const ref = React.createRef();
   return (
-    <section className="mt-20">
-      <div className="container px-4 py-8 mx-auto md:p-8">
-        <h2 className="text-2xl text-center font-bold sm:text-4xl">
-          Welcome To Blog
-        </h2>
-        <p className="mt-4 mb-8 "></p>
-        <div className="space-y-4">
-          <details className="w-full border rounded-lg">
-            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
-              Tell us the differences between uncontrolled and controlled
-              components.
-            </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
-              {" "}
-              Uncontrolled and controlled components are terms commonly used in
-              the context of web development in React, a popular JavaScript
-              library. In React, components are reusable pieces of code that
-              encapsulate functionality and can be composed to build complex
-              user interfaces. Uncontrolled components are those that manage
-              their own state internally and do not rely on React's state
-              management system. They typically use standard HTML form elements
-              such as input, select, and textarea. In an uncontrolled component,
-              the value of the form element is managed by the browser, and the
-              component only updates its internal state in response to user
-              input events. This can be useful for simple forms where you do not
-              need to keep track of the state of each individual input element
-            </p>
-          </details>
+    <>
+      <ReactToPdf y={25} scale={0.4} targetRef={ref} filename="recipe-hub.pdf">
+        {({ toPdf }) => (
+          <button
+            className="fixed bottom-5 right-5 bg-neutral text-secondary text-2xl py-2 px-2 rounded-full"
+            onClick={toPdf}
+          >
+            <AiOutlineDownload></AiOutlineDownload>
+          </button>
+        )}
+      </ReactToPdf>
 
-          <details className="w-full border rounded-lg">
-            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
-              How to validate React props using PropTypes
-            </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
-              React PropTypes is a built-in library that provides a way to
-              validate the props passed to a React component. PropTypes is
-              especially useful for catching bugs and ensuring that the right
-              data types and shapes of props are being passed to a component. In
-              this example, we import PropTypes from the prop-types package and
-              define our MyComponent function. We then define the PropTypes for
-              the title and description props using PropTypes.string. We also
-              specify that the title prop is required by using the .isRequired
-              method. If a prop is not passed to the component or is of the
-              wrong type, React will log a warning in the console. This can help
-              you catch bugs early in the development process.
-              <br></br> Here are some
-              other PropTypes types you can use:<br></br>PropTypes.string<br></br>
-              PropTypes.number <br></br>PropTypes.boolean <br></br>PropTypes.array
-              <br></br>PropTypes.object <br></br>PropTypes.func <br></br>PropTypes. .{" "}
-            </p>
-          </details>
+      <section className="mt-20" ref={ref}>
+        <div className="container px-4 py-8 mx-auto md:p-8">
+          <h2 className="text-2xl text-center font-bold sm:text-4xl">
+            Welcome To Blog
+          </h2>
+          <p className="mt-4 mb-8 "></p>
+          <div className="space-y-4">
+            <details className="w-full border rounded-lg">
+              <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
+                Tell us the differences between uncontrolled and controlled
+                components.
+              </summary>
+              <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
+                In the context of software development, uncontrolled and
+                controlled components refer to different approaches for building
+                user interfaces. Uncontrolled components are typically used for
+                building simple, stateless UI components. They are created using
+                plain HTML and JavaScript, and do not rely on any external state
+                management or data handling libraries. This means that any user
+                input received by the component is handled directly by the
+                component, without any external interference. The component has
+                full control over its own state and behavior, and any updates to
+                the component are made directly by the user. On the other hand,
+                controlled components are typically used for building more
+                complex UI components that require state management and data
+                handling. Controlled components rely on external libraries, such
+                as React or Angular, to manage their state and handle user
+                input. In a controlled component, the component's state is
+                managed by an external source, such as a state management
+                library or a parent component. Any user input received by the
+                component is communicated back to the external source, which
+                then updates the component's state and triggers any necessary
+                updates to the UI.{" "}
+              </p>
+            </details>
 
-          <details className="w-full border rounded-lg">
-            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
-              Tell us the difference between nodejs and express js.
-            </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
-              Node.js and Express.js are both important tools for building web
-              applications, but they have different roles and purposes. Here are
-              the main differences between Node.js and Express.js. <br></br>
-              Node.js: -<br></br>
-              Node.js is a runtime environment for executing JavaScript code
-              outside of a web browser. - Node.js is built on the V8 JavaScript
-              engine from Google and uses an event-driven, non-blocking I/O
-              model that makes it well-suited for building scalable,
-              high-performance applications. - Node.js provides a set of
-              built-in modules that can be used to perform a variety of tasks,
-              such as reading and writing files, making HTTP requests, and
-              creating and managing child processes.
-              <br></br>
-              Express.js:<br></br>- Express.js is a web application framework
-              built on top of Node.js that provides a set of tools for building
-              web applications and APIs. - Express.js makes it easy to handle
-              HTTP requests and responses, manage middleware, and create and
-              route to different endpoints. - Express.js provides a set of
-              built-in middleware functions that can be used to perform tasks
-              such as logging, parsing request bodies, and handling CORS
-              requests. - Express.js also has a large ecosystem of third-party
-              middleware and plugins that can be used to extend its
-              functionality. In summary, Node.js provides a powerful runtime
-              environment for executing JavaScript code, while Express.js is a
-              framework built on top of Node.js that provides a set of tools for
-              building web applications and APIs. While it's possible to build a
-              web application without using a framework like Express.js, it can
-              greatly simplify the development process and provide a more
-              structured approach to building web applications.
-            </p>
-          </details>
+            <details className="w-full border rounded-lg">
+              <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
+                How to validate React props using PropTypes
+              </summary>
+              <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
+                React provides a library called PropTypes that allows you to
+                define and validate the type of props that your components
+                receive. Define each prop as a key-value pair in the propTypes
+                object, where the key is the name of the prop, and the value is
+                a PropTypes validator. You can use various PropTypes validators
+                such as PropTypes.string, PropTypes.number, PropTypes.bool,
+                PropTypes.object, PropTypes.array, PropTypes.func,
+                PropTypes.symbol, etc. You can also use more complex validators
+                such as PropTypes.shape to define an object with specific
+                properties, PropTypes.arrayOf to define an array of a specific
+                type of prop, and PropTypes.oneOf or PropTypes.oneOfType to
+                define props that can have a specific set of values or a
+                specific set of types. If a required prop is not passed, or if
+                the passed prop does not match the expected type, a warning will
+                be logged in the console.
+              </p>
+            </details>
 
-          <details className="w-full border rounded-lg">
-            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
-              What is a custom hook, and why will you create a custom hook?
-            </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
-              In React, a custom hook is a JavaScript function that uses React
-              hooks and can be reused across different components to provide
-              some specific functionality. Custom hooks allow developers to
-              extract reusable code from components and encapsulate it into a
-              separate function that can be easily imported and reused in other
-              components. This can lead to more efficient and organized code, as
-              well as improved code reusability. There are many reasons why you
-              might want to create a custom hook. Here are a few examples:
-              Reusing code: If you find yourself repeating the same code pattern
-              in multiple components, it may be a good idea to extract that code
-              into a custom hook. This can help you reduce duplication and make
-              your code more modular and reusable. Abstracting complex logic: If
-              you have complex logic that you need to perform in multiple
-              components, a custom hook can help you encapsulate that logic into
-              a single function that can be easily reused. Separating concerns:
-              If you have code that deals with side-effects, such as fetching
-              data from an API or managing state, you can use a custom hook to
-              separate that logic from the presentation layer of your
-              components. This can make your code easier to reason about and
-              test.
-            </p>
-          </details>
+            <details className="w-full border rounded-lg">
+              <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
+                Tell us the difference between nodejs and express js.
+              </summary>
+              <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
+                Node.js and Express.js are two distinct but related technologies
+                used for building web applications. Node.js is a JavaScript
+                runtime environment built on the Chrome V8 JavaScript engine. It
+                allows developers to run JavaScript code outside of a browser
+                environment, making it possible to build server-side
+                applications with JavaScript. Node.js provides a set of built-in
+                modules and libraries for handling I/O operations, networking,
+                file system access, and more. Express.js, on the other hand, is
+                a web application framework built on top of Node.js. It provides
+                a set of abstractions and helper functions that make it easier
+                to build web applications with Node.js. Express.js provides
+                features such as routing, middleware, templating engines, and
+                more, that simplify the process of building web applications. In
+                short, Node.js is a runtime environment for executing JavaScript
+                code outside of the browser, while Express.js is a framework
+                built on top of Node.js that provides additional features and
+                abstractions for building web applications.
+              </p>
+            </details>
+
+            <details className="w-full border rounded-lg">
+              <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
+                What is a custom hook, and why will you create a custom hook?
+              </summary>
+              <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">................ </p>
+            </details>
+          </div>
         </div>
-      </div>
-    </section>
-
-    //
+      </section>
+    </>
   );
 };
 
