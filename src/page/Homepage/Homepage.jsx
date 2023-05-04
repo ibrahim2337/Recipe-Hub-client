@@ -15,6 +15,8 @@ const Homepage = () => {
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
+
+  
   return (
     <div>
       <div>
@@ -43,7 +45,9 @@ const Homepage = () => {
                     <h2 className="text-3xl font-semibold tracking-wide">
                       {recipe.chef.chef_name}
                     </h2>
-                    <p className="">{recipe.chef.experience}</p>
+                    <p className="">
+                    <b>Years of experience: </b>
+                      {recipe.chef.experience}</p>
                     <p>{recipe.chef.likes}</p>
                   </div>
                 </div>
