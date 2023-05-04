@@ -157,14 +157,14 @@ const Register = () => {
             <button
               disabled={!accepted}
               type="submit"
-              className="w-full px-8 py-3 font-semibold rounded-md bg-neutral text-secondary disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full px-8 py-3 font-semibold rounded-md text-white border-md rounded-b-md bg-blue-500  bg-gradient-to-r from-purple-500 to-blue-400 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500  delay-75 duration-100 transition-all bg-neutral text-secondary disabled:opacity-70 disabled:cursor-not-allowed"
             >
               Register
             </button>
           </div>
           <p className="px-6 text-sm text-center text-neutral">
             Already have an account? <br />
-            <Link rel="noopener noreferrer" to="/login" className="underline">
+            <Link rel="noopener noreferrer" to="/login" className="underline text-sm text-blue-700">
               Log In
             </Link>
           </p>

@@ -113,7 +113,7 @@ const Login = () => {
             </small>
             <button
               type="submit"
-              className="block w-full p-3 text-center rounded-md bg-neutral text-secondary"
+              className="w-full px-6 py-2 font-bold text-cyan-50 border-md rounded-b-md bg-blue-500  bg-gradient-to-r from-purple-500 to-blue-400 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500  delay-75 duration-100 transition-all  "
             >
               Log in
             </button>
@@ -141,7 +141,7 @@ const Login = () => {
             <button
               onClick={handleGithubSignIn}
               aria-label="Log in with GitHub"
-              className="w-12/12 lg:w-6/12 p-3 rounded-md flex items-center justify-center font-semibold text-lg lg:ml-2 bg-[#161B22] text-secondary"
+              className="w-12/12 lg:w-6/12 p-3 rounded-md flex items-center justify-center font-semibold text-lg lg:ml-2 bg-[#161B22] text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ const Login = () => {
             <Link
               rel="noopener noreferrer"
               to="/register"
-              className="underline hover:text-primary"
+              className="underline hover:text-primary text-sm text-blue-700"
             >
               Register Now
             </Link>

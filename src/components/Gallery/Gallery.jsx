@@ -5,9 +5,11 @@ const Gallery = () => {
   return (
     <div>
       <section className="py-6 my-10">
-        <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-black">
-          Our Recipes
-        </h1>
+      <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-black">
+            Our Recipes Gallery
+          </h1>
+
+          
         <div className="container flex flex-col justify-center p-4 mx-auto ">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
             <img

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
 
@@ -11,9 +12,7 @@ const Team = () => {
           </h1>
 
           <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-            incidunt ex placeat modi magni quia error alias, adipisci rem
-            similique, at omnis eligendi optio eos harum.
+          Team members work under the guidance of team leaders and alongside other team members to ensure that organizational goals are met. They can be found in virtually all sectors where their duties vary depending on the company's scope of practice.
           </p>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
