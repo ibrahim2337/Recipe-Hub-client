@@ -14,6 +14,7 @@ import DetailsPage from "./page/DetailsPage/DetailsPage";
 import AuthProvider from "./provider/AuthProvider";
 import PrivateRoute from "./route/PrivateRoute";
 import { Toaster } from "react-hot-toast";
+import AboutPage from "./page/AboutPage/AboutPage";
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/home",
                 element: <Homepage />,
+            },
+            {
+                path:"/about",
+                element:<AboutPage />
             },
             {
                 path: "/login",

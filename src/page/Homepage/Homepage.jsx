@@ -56,10 +56,12 @@ const Homepage = () => {
                                           {recipe.chef.chef_name}
                                       </h2>
                                       <p className="">
-                                          <b>Number of recipes: </b>
+                                          <b>Year of Experience: </b>
                                           {recipe.chef.experience}
                                       </p>
-                                      <p>{recipe.chef.likes}</p>
+                                      <p>
+                                        <b>Likes: </b>
+                                        {recipe.chef.likes}</p>
                                   </div>
                               </div>
                           </div>

@@ -114,7 +114,7 @@ const DetailsPage = () => {
                                         <b>Review : </b>
                                         {recipe.review}
                                     </p>
-                                    <div className="flex items-center md-2 space-x-2">
+                                    <div className="flex items-center md-2 space-x-2 text-sm">
                                         <b>Rating : </b>
                                         {recipe.rating}
                                     </div>

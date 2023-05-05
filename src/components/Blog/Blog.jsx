@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import ReactToPdf from "react-to-pdf";
@@ -106,7 +107,30 @@ const Blog = () => {
               <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 cursor-pointer">
                 What is a custom hook, and why will you create a custom hook?
               </summary>
-              <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">................ </p>
+              <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
+                In React, a custom hook is a reusable function that encapsulates
+                common stateful logic and can be shared between components.
+                Custom hooks allow you to extract stateful logic from components
+                and reuse it across multiple components, reducing code
+                duplication and improving maintainability. Custom hooks are
+                created using the use prefix in the function name, and they can
+                use other built-in hooks such as useState, useEffect, useRef,
+                and useContext to manage state and perform side effects. In the
+                example above, we're creating a custom hook called useToggle
+                that uses the useState hook to manage the state of a boolean
+                value. The useToggle hook returns an array with two values: the
+                current value of the boolean and a toggle function that toggles
+                the value of the boolean. You would create a custom hook in
+                order to extract common stateful logic from multiple components
+                into a reusable function. This can make your code more modular,
+                easier to read and maintain, and can help reduce code
+                duplication. For example, if you have multiple components that
+                share similar stateful logic, such as a form with validation and
+                error handling, you can create a custom hook that encapsulates
+                that logic and reuse it across multiple components. This can
+                make your code more efficient, more readable and easier to
+                maintain.
+              </p>
             </details>
           </div>
         </div>
