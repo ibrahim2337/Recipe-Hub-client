@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div>
       <section className="container px-6 py-10 mx-auto">
-        <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+        <div className="container grid gap-6 mx-auto text-center  lg:grid-cols-2 xl:grid-cols-5">
           <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2">
             <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl ">
               About US

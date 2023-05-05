@@ -57,7 +57,7 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/recipes/${params.id}`),
+                    fetch(`https://recipe-hub-server-zeta.vercel.app/recipes/${params.id}`),
             },
         ],
     },
