@@ -3,7 +3,7 @@ import React from "react";
 
 const Category = () => {
   return (
-    <section className="p-6 my-6 mx-16 ">
+    <section className="container px-10 py-10 mx-auto ">
       <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
         <div className="flex p-4 space-x-4 rounded-lg md:space-x-6  bg-blue-500  bg-gradient-to-r from-purple-500 to-blue-400 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500  delay-75 duration-100 transition-all ">
           <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">

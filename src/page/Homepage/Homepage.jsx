@@ -25,12 +25,12 @@ const Homepage = () => {
               <Banner />
               <Category />
           </div>
-          <div className="container px-6 py-10 mx-auto">
-              <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-black">
+          <div className="container  py-10 mx-auto">
+              <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl ">
                   Our Chief Chef
               </h1>
 
-              <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 ">
+              <p className="max-w-2xl mx-auto my-6 text-center text-gray-700 ">
                   A chef is a professional cook and tradesman who is proficient
                   in all aspects of food preparation, often focusing on a
                   particular cuisine. The word Chef is derived from the term

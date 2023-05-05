@@ -5,14 +5,39 @@ import React from "react";
 const AboutPage = () => {
   return (
     <div>
-      <section className="py-6  ">
-        <div className="container p-4 mx-auto space-y-16 sm:p-10">
+      <section className="container px-6 py-10 mx-auto">
+        <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+          <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2">
+            <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl ">
+              About US
+            </h1>
+
+            <p className="  text-gray-700 mt-5  ">
+              Recipes-hub is an international food magazine that was launched in
+              2009 by Paul Hegeman, a Dutch chef based in Washington, USA.{" "}
+              <br></br>
+              Recipes-hub features content for all levels of cooks and foodies.
+              Our recipes and how-to guides are provided by some of the best
+              chefs in the world. You can take these recipes through your
+              culinary lifetime.
+            </p>
+          </div>
+          <img
+            src="https://i.ibb.co/hZ9LwvG/depositphotos-164059430-stock-photo-chalkboard-with-group-of-fresh.webp"
+            alt=""
+            className="object-cover w-full h-auto rounded-md xl:col-span-3 "
+          />
+        </div>
+      </section>
+
+      <section className="container px-6 py-10 mx-auto ">
+        <div className=" p-4 mx-auto space-y-16 sm:p-10">
           <div className="space-y-4">
-            <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl ">
               Top Recipe Authors
             </h1>
 
-            <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 ">
+            <p className="max-w-2xl mx-auto my-6 text-center text-gray-700 ">
               Team members work under the guidance of team leaders and alongside
               other team members to ensure that organizational goals are met.
               They can be found in virtually all sectors where their duties vary
@@ -258,14 +283,14 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section className=" ">
-        <div className="container px-6 py-12 mx-auto">
+      <section className="container px-6 py-10 mx-auto">
+        <div>
           <div className="text-center">
             <h1 className="mt-2 text-2xl font-semibold  md:text-3xl ">
               Get in touch
             </h1>
 
-            <p className="mt-3 text-gray-500 ">
+            <p className="mt-3 text-gray-700 ">
               Our friendly team is always here to chat.
             </p>
           </div>
@@ -320,9 +345,7 @@ const AboutPage = () => {
               <h2 className="mt-4 text-lg font-medium text-gray-800 ">
                 Office
               </h2>
-              <p className="mt-2  ">
-                Come say hello at our office HQ.
-              </p>
+              <p className="mt-2  ">Come say hello at our office HQ.</p>
               <p className="mt-2 text-blue-500 ">
                 100 Smith Street Collingwood VIC 3066 AU
               </p>

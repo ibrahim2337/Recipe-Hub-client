@@ -5,13 +5,13 @@ import React from "react";
 const Team = () => {
   return (
     <div>
-      <section className="bg-white ">
-        <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-black">
+      <section className="container px-10 py-10 mx-auto">
+        <div >
+          <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl ">
             Our Executive Team
           </h1>
 
-          <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 ">
+          <p className="max-w-2xl mx-auto my-6 text-center text-gray-700 ">
           Team members work under the guidance of team leaders and alongside other team members to ensure that organizational goals are met. They can be found in virtually all sectors where their duties vary depending on the company's scope of practice.
           </p>
 

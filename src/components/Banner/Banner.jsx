@@ -1,10 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <div className=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
           <div className="relative lg:w-1/2">
@@ -28,7 +29,7 @@ const Banner = () => {
             <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
               Your new Test
             </h5>
-            <p className="mb-5 text-gray-800">
+            <p className="mb-5 text-gray-700">
               Would you like millions of new customers to enjoy your amazing
               food and groceries? So would we! It's simple: we list your menu
               and product lists online, help you process orders, pick them up,
